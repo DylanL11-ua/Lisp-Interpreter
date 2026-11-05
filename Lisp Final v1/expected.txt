@@ -1,0 +1,538 @@
+()
+a
+45
+(error "Unknown function: foo")
+(error "Unknown function: unknown")
+(error "First element of expression must be an atom")
+test
+nil
+(1 2 3)
+((1 2 3) (a b c))
+(() a 45 test (1 2 3) ((1 2 3) (a b c)))
+x
+(a b c)
+a
+45
+nil
+()
+(car x)
+(error "quote requires exactly 1 argument")
+(error "quote requires exactly 1 argument")
+a
+(b c)
+(a b)
+(c d)
+a
+(error "car requires a non-empty list")
+(error "car requires a non-empty list")
+(error "cdr requires a non-empty list")
+(error "cdr requires a non-empty list")
+(a)
+(a b c)
+(a . b)
+((a b) c d)
+(())
+(a b c)
+(error "cons requires exactly 2 arguments")
+(error "cons requires exactly 2 arguments")
+(error "cons requires exactly 2 arguments")
+a
+(b c)
+(error "eval requires exactly 1 argument")
+(error "eval requires exactly 1 argument")
+a
+b
+c
+x
+(y z)
+(x y z)
+2
+2
+x
+4
+4
+2
+x
+x
+(1 2 3)
+(1 2 3)
+1
+(2 3)
+7
+7
+4
+x
+10
+10
+10
+10
+(10 4)
+10
+(4)
+(error "set requires exactly 2 arguments")
+(error "set requires exactly 2 arguments")
+(error "set requires a symbol as its first argument")
+(error "set requires exactly 2 arguments")
+T
+()
+()
+()
+T
+T
+()
+()
+()
+T
+T
+T
+T
+()
+()
+T
+()
+()
+T
+T
+T
+T
+T
+T
+T
+()
+()
+()
+T
+()
+()
+T
+T
+hello
+hello
+T
+()
+(one two three)
+(one two three)
+T
+one
+(two three)
+(error "nil? requires exactly 1 argument")
+(error "nil? requires exactly 1 argument")
+(error "not? requires exactly 1 argument")
+(error "not? requires exactly 1 argument")
+(error "atom? requires exactly 1 argument")
+(error "atom? requires exactly 1 argument")
+(error "list? requires exactly 1 argument")
+(error "list? requires exactly 1 argument")
+(error "number? requires exactly 1 argument")
+(error "number? requires exactly 1 argument")
+T
+()
+()
+()
+T
+()
+()
+()
+T
+T
+T
+()
+T
+T
+T
+T
+(error "and? requires exactly 2 arguments")
+(error "and? requires exactly 2 arguments")
+(error "and? requires exactly 2 arguments")
+(error "or? requires exactly 2 arguments")
+(error "or? requires exactly 2 arguments")
+(error "or? requires exactly 2 arguments")
+T
+()
+T
+()
+T
+()
+T
+()
+()
+()
+T
+()
+hello
+hello
+world
+T
+()
+(error "eq? requires exactly 2 arguments")
+(error "eq? requires exactly 2 arguments")
+(error "eq? requires exactly 2 arguments")
+yes
+no
+true-branch
+equal
+not-equal
+nil
+number
+list
+yes
+no
+(error "if requires exactly 3 arguments")
+(error "if requires exactly 3 arguments")
+(error "if requires exactly 3 arguments")
+(error "if requires exactly 3 arguments")
+second
+third
+correct
+atom
+list
+a-matches-itself
+short-circuit-worked
+(error "cond requires exactly 1 argument")
+10
+(error "cond requires condition/result pairs")
+(error "cond requires condition/result pairs")
+8
+0
+-2
+6
+(error "add requires exactly 2 arguments")
+(error "add requires exactly 2 arguments")
+(error "add requires exactly 2 arguments")
+(error "Expected a number")
+(error "Expected a number")
+(error "Expected a number")
+6
+-6
+-8
+8
+(error "sub requires exactly 2 arguments")
+(error "sub requires exactly 2 arguments")
+(error "Expected a number")
+(error "sub requires exactly 2 arguments")
+42
+0
+-12
+12
+(error "mul requires exactly 2 arguments")
+(error "mul requires exactly 2 arguments")
+(error "Expected a number")
+(error "mul requires exactly 2 arguments")
+3
+4
+2
+-3
+(error "div requires exactly 2 arguments")
+(error "div requires exactly 2 arguments")
+(error "Expected a number")
+(error "div cannot divide by zero")
+(error "div requires exactly 2 arguments")
+1
+2
+0
+3
+(error "rem requires exactly 2 arguments")
+(error "rem requires exactly 2 arguments")
+(error "Expected a number")
+(error "rem cannot divide by zero")
+(error "rem requires exactly 2 arguments")
+T
+()
+()
+T
+T
+(error "lt requires exactly 2 arguments")
+(error "lt requires exactly 2 arguments")
+(error "lt requires exactly 2 arguments")
+(error "Expected a number")
+(error "Expected a number")
+10
+4
+14
+6
+40
+2
+2
+()
+T
+11
+20
+20
+4
+3
+T
+()
+less
+not-less
+second
+(function () 5)
+(function (a) a)
+(function (a b) (add a b))
+(function (x y z) (mul x (add y z)))
+(function () ())
+(function (x) (quote x))
+(function (x) (if (lt x 10) (quote small) (quote large)))
+(error "function requires exactly 2 arguments")
+(error "function requires exactly 2 arguments")
+(error "function requires exactly 2 arguments")
+(error "function requires a parameter list")
+(error "function parameters must be symbols")
+(error "function parameters must be symbols")
+(function (a b) (add a b))
+(function (a b) (add a b))
+(function (x) (mul x x))
+(function (x) (mul x x))
+(function () 42)
+(function () 42)
+(function (x) x)
+(function (x) x)
+(function (a b) a)
+(function (a b) a)
+(function (condition a b) (if condition a b))
+(function (condition a b) (if condition a b))
+(function (n) (if (lt n 2) 1 (mul n (recursive (sub n 1)))))
+(function (n) (if (lt n 2) 1 (mul n (recursive (sub n 1)))))
+(function (x) (add x 1))
+(function (x) (add x 1))
+(function (x) (add x 1))
+(function (x) (add x 1))
+T
+()
+()
+function
+(a b)
+(add a b)
+(function (a) (add a 1))
+(function (b) (sub b 1))
+((function (x) x))
+((function (a b) (add a b)) (function (x) (mul x x)))
+((function (a b) (add a b)) (function (x) (mul x x)))
+((function (a b) (add a b)) (function (x) (mul x x)))
+(function (a b) (add a b))
+(function (x) (mul x x))
+8
+30
+25
+100
+42
+hello
+45
+a
+10
+yes
+no
+less
+1
+1
+120
+720
+11
+11
+26
+100
+200
+(function (x) (add x 5))
+15
+100
+200
+(function (x) (mul x 2))
+(function (x) (double (double x)))
+10
+20
+40
+(function (a b c) (add (add a b) c))
+6
+60
+(function (a b) (add a b))
+(function (a b) (add a b))
+8
+30
+-2
+(function (x) (mul x (mul x x)))
+(function (x) (mul x (mul x x)))
+8
+27
+-8
+(function (x) (add x 1))
+(function (x) (add x 1))
+6
+1
+-4
+(function () 42)
+(function () 42)
+42
+(function () ())
+(function () ())
+()
+(function (x) x)
+(function (x) x)
+hello
+100
+(a b c)
+(function (a b c) (add (add a b) c))
+(function (a b c) (add (add a b) c))
+6
+60
+(function (a b) (if (lt a b) b a))
+(function (a b) (if (lt a b) b a))
+10
+10
+7
+(function (x) (if (lt x 0) (sub 0 x) x))
+(function (x) (if (lt x 0) (sub 0 x) x))
+10
+10
+0
+(function (n) (if (lt n 2) 1 (mul n (factorial (sub n 1)))))
+(function (n) (if (lt n 2) 1 (mul n (factorial (sub n 1)))))
+1
+1
+120
+720
+(function (x) (mul x 2))
+(function (x) (doubleDef (doubleDef x)))
+10
+20
+40
+(function (x) (mul x x))
+(function (a b) (square (add a b)))
+25
+100
+(function (a b) (if (eq? a b) (quote equal) (quote not-equal)))
+equal
+not-equal
+equal
+not-equal
+(function (x) (eq? x 0))
+T
+()
+(function (x) (lt 0 x))
+T
+()
+()
+(function (condition a b) (if condition a b))
+yes
+no
+less
+(function (a b) a)
+hello
+10
+100
+(function (globalValue) (add globalValue 5))
+15
+100
+25
+100
+(function (x) (add (doubleDef x) 1))
+11
+21
+(function (x) (increment (doubleDef (square x))))
+9
+19
+(function (x) (add x 10))
+15
+(function (x) (add x 10))
+15
+30
+(function (x) (mul x 10))
+50
+15
+(function (x) (add x 1))
+6
+(function (x) (mul x 2))
+10
+(function (a b) (cons a (cons b (quote ()))))
+(a b)
+(1 2)
+(function (x) (car x))
+a
+1
+(function (x) (cdr x))
+(b c)
+(2 3)
+(function (x) (nil? x))
+T
+()
+()
+(function (n) (if (lt n 1) 0 (add 1 (countDown (sub n 1)))))
+0
+3
+5
+(function (n) (if (lt n 2) n (add (fibonacci (sub n 1)) (fibonacci (sub n 2)))))
+0
+1
+5
+8
+(error "def requires exactly 3 arguments")
+(error "def requires exactly 3 arguments")
+(error "def requires exactly 3 arguments")
+(error "def requires exactly 3 arguments")
+(error "def requires a symbol as its function name")
+(error "function requires a parameter list")
+(error "function parameters must be symbols")
+(error "function parameters must be symbols")
+16
+72
+42
+9
+(function (a b) (add a b))
+(error "addTwo called with incorrect number of arguments")
+(error "addTwo called with incorrect number of arguments")
+(error "addTwo called with incorrect number of arguments")
+(error "Expected a number")
+(error "Expected a number")
+(function (x) (mul x x))
+(error "square called with incorrect number of arguments")
+(error "square called with incorrect number of arguments")
+(error "Expected a number")
+(error "Expected a number")
+(function () 0)
+(error "zero called with incorrect number of arguments")
+(function (a b) (div a b))
+(error "div cannot divide by zero")
+(error "Expected a number")
+(function (x) (car x))
+(error "car requires a non-empty list")
+(error "car requires a non-empty list")
+(function (x) (unknown x))
+(error "Unknown function: unknown")
+(function (x) (add (div x 0) 5))
+(error "div cannot divide by zero")
+(function (card) (if (lt 10 card) 10 card))
+(function (hand) (if (nil? hand) 0 (add (cardValue (car hand)) (handTotal (cdr hand)))))
+(function (hand) (if (nil? hand) 0 (if (eq? (car hand) 1) (add 1 (countAces (cdr hand))) (countAces (cdr hand)))))
+(function (total aces) (if (eq? aces 0) total (if (lt (add total 10) 22) (useAces (add total 10) (sub aces 1)) total)))
+(function (hand) (useAces (handTotal hand) (countAces hand)))
+21
+19
+15
+20
+20
+22
+25
+19
+(function (rolls) (car rolls))
+(function (rolls) (car (cdr rolls)))
+(function (rolls) (car (cdr (cdr rolls))))
+(function (rolls framesLeft) (if (eq? framesLeft 0) 0 (if (eq? (firstRoll rolls) 10) (add (add 10 (add (secondRoll rolls) (thirdRoll rolls))) (scoreFrames (cdr rolls) (sub framesLeft 1))) (if (eq? (add (firstRoll rolls) (secondRoll rolls)) 10) (add (add 10 (thirdRoll rolls)) (scoreFrames (cdr (cdr rolls)) (sub framesLeft 1))) (add (add (firstRoll rolls) (secondRoll rolls)) (scoreFrames (cdr (cdr rolls)) (sub framesLeft 1)))))))
+(function (rolls) (scoreFrames rolls 10))
+300
+150
+90
+0
+26
+(function (prices) (if (nil? prices) 0 (add (car prices) (totalCost (cdr prices)))))
+(function (prices) (if (nil? prices) 0 (add 1 (countItems (cdr prices)))))
+(function (prices) (if (nil? prices) 0 (div (totalCost prices) (countItems prices))))
+(function (prices) (if (nil? prices) 0 (if (lt 20 (car prices)) (add 1 (countExpensive (cdr prices))) (countExpensive (cdr prices)))))
+30
+4
+20
+0
+0
+0
+(10 25 15 40 30)
+120
+5
+24
+3

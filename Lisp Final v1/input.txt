@@ -1,0 +1,828 @@
+()
+a
+45
+
+(foo 'a)
+(unknown '(a b c))
+((quote car) '(a b c))
+
+test
+nil
+
+'(1 2 3)
+'((1 2 3) (a b c))
+'(() a 45 test (1 2 3) ((1 2 3) (a b c)))
+
+(quote x)
+(quote (a b c))
+'a
+'45
+'nil
+'()
+'(car x)
+
+(quote)
+(quote 'a 'b)
+
+
+(car '(a b c))
+(cdr '(a b c))
+(car '((a b) c d))
+(cdr '((a b) c d))
+(car (car '((a b) c d)))
+
+(car 'a)
+(car '())
+(cdr 'a)
+(cdr '())
+
+
+(cons 'a '())
+(cons 'a '(b c))
+(cons 'a 'b)
+(cons '(a b) '(c d))
+(cons '() '())
+(cons 'a (cons 'b (cons 'c '())))
+
+(cons)
+(cons 'a)
+(cons 'a 'b 'c)
+
+
+(eval (car '(a b c)))
+(eval (cdr '(a b c)))
+
+(eval)
+(eval 'a 'b)
+
+
+'a 'b 'c
+(car '(x y z)) (cdr '(x y z)) (cons 'x '(y z))
+
+(set a 2)
+a
+x
+
+(set b 4)
+b
+a
+
+(set c 'x)
+c
+
+(set d '(1 2 3))
+d
+(car d)
+(cdr d)
+
+(set a 7)
+a
+b
+c
+
+(set a 10)
+a
+
+(set copy a)
+copy
+
+(cons a (cons b '()))
+(car (cons a (cons b '())))
+(cdr (cons a (cons b '())))
+
+(set)
+(set a)
+(set '(a b) 5)
+(set a 1 2)
+
+
+(nil? ())
+(nil? 'T)
+(nil? 'a)
+(nil? '(a))
+(nil? (cdr '(a)))
+
+(not? ())
+(not? 'T)
+(not? 'a)
+(not? '(a))
+(not? (cdr '(a)))
+
+(atom? x)
+(atom? 'hello)
+(atom? 'T)
+(atom? '(x))
+(atom? '(a b))
+(atom? a)
+
+(list? 'T)
+(list? x)
+(list? '(x))
+(list? '(a b c))
+(list? d)
+
+(number? 0)
+(number? 45)
+(number? -5)
+(number? +17)
+(number? 'hello)
+(number? '12a)
+(number? '(1 2 3))
+(number? a)
+
+(set empty '())
+empty
+(nil? empty)
+(not? empty)
+
+(set symbol 'hello)
+symbol
+(atom? symbol)
+(number? symbol)
+
+(set mylist '(one two three))
+mylist
+(list? mylist)
+(car mylist)
+(cdr mylist)
+
+(nil?)
+(nil? 'a 'b)
+(not?)
+(not? () 'T)
+(atom?)
+(atom? 'a 'b)
+(list?)
+(list? '(a) '(b))
+(number?)
+(number? 1 2)
+
+
+(and? 'T 'T)
+(and? 'T ())
+(and? () 'T)
+(and? () ())
+
+(and? 'hello 'world)
+(and? 'hello ())
+(and? () 'world)
+(and? () (car 'a))
+
+(or? 'T 'T)
+(or? 'T ())
+(or? () 'T)
+(or? () ())
+
+(or? 'hello 'world)
+(or? 'hello ())
+(or? () 'world)
+(or? 'T (car 'a))
+
+(and?)
+(and? 'T)
+(and? 'T 'T 'T)
+(or?)
+(or? ())
+(or? () 'T 'T)
+
+
+(eq? 'a 'a)
+(eq? 'a 'b)
+(eq? 'hello 'hello)
+(eq? 'hello 'world)
+
+(eq? 5 5)
+(eq? 5 6)
+(eq? -5 -5)
+
+(eq? () ())
+(eq? '(a) '(a))
+(eq? '(a b) '(a b))
+
+(eq? a a)
+(eq? a b)
+
+(set eqA 'hello)
+(set eqB 'hello)
+(set eqC 'world)
+(eq? eqA eqB)
+(eq? eqA eqC)
+
+(eq?)
+(eq? 'a)
+(eq? 'a 'a 'a)
+
+
+(if 'T 'yes 'no)
+(if () 'yes 'no)
+
+(if 'hello 'true-branch 'false-branch)
+(if (eq? 'a 'a) 'equal 'not-equal)
+(if (eq? 'a 'b) 'equal 'not-equal)
+
+(if (nil? ()) 'nil 'not-nil)
+(if (number? 45) 'number 'not-number)
+(if (list? '(a b)) 'list 'not-list)
+
+(if 'T 'yes (car 'a))
+(if () (car 'a) 'no)
+
+(if)
+(if 'T)
+(if 'T 'yes)
+(if 'T 'yes 'no 'extra)
+
+
+(cond (() 'first 'T 'second))
+(cond (() 'first () 'second 'T 'third))
+
+(cond ((eq? 'a 'b) 'wrong
+       (eq? 'a 'a) 'correct
+       'T 'default))
+
+(cond ((nil? 'a) 'nil
+       (atom? 'a) 'atom
+       'T 'default))
+
+(cond ((number? 'hello) 'number
+       (list? '(a b c)) 'list
+       'T 'default))
+
+(cond ((eq? a b) 'same
+       (eq? a a) 'a-matches-itself
+       'T 'default))
+
+(cond (() (car 'a)
+       'T 'short-circuit-worked))
+
+(cond)
+(cond 'a)
+(cond ('T))
+(cond (() 'first 'T))
+
+
+(add 5 3)
+(add 0 0)
+(add -5 3)
+(add 10 -4)
+
+(add)
+(add 5)
+(add 5 3 2)
+(add 'hello 5)
+(add '(1 2) 5)
+(add () 5)
+
+
+(sub 10 4)
+(sub 4 10)
+(sub -5 3)
+(sub 5 -3)
+
+(sub)
+(sub 10)
+(sub 'hello 5)
+(sub 10 5 2)
+
+
+(mul 6 7)
+(mul 0 100)
+(mul -3 4)
+(mul -3 -4)
+
+(mul)
+(mul 5)
+(mul 'hello 5)
+(mul 2 3 4)
+
+
+(div 10 3)
+(div 20 5)
+(div 5 2)
+(div -10 3)
+
+(div)
+(div 10)
+(div 'hello 5)
+(div 10 0)
+(div 10 2 3)
+
+
+(rem 10 3)
+(rem 20 6)
+(rem 5 5)
+(rem 3 5)
+
+(rem)
+(rem 10)
+(rem 'hello 5)
+(rem 10 0)
+(rem 10 2 3)
+
+
+(lt 3 5)
+(lt 5 3)
+(lt 5 5)
+(lt -5 0)
+(lt -10 -5)
+
+(lt)
+(lt 5)
+(lt 5 10 15)
+(lt 'hello 5)
+(lt '(1 2) 5)
+
+
+(set mathA 10)
+(set mathB 4)
+
+(add mathA mathB)
+(sub mathA mathB)
+(mul mathA mathB)
+(div mathA mathB)
+(rem mathA mathB)
+(lt mathA mathB)
+(lt mathB mathA)
+
+(add 5 (mul 2 3))
+(sub (mul 5 5) (add 3 2))
+(mul (add 2 3) (sub 10 6))
+(div (mul 5 4) (add 2 3))
+(rem (add 8 5) (sub 7 2))
+
+(lt (add 2 3) (mul 2 4))
+(lt (mul 3 3) (add 4 5))
+
+(if (lt 3 5) 'less 'not-less)
+(if (lt 10 5) 'less 'not-less)
+
+(cond ((lt 10 5) 'first
+       (lt 5 10) 'second
+       'T 'default))
+
+
+(function () 5)
+(function (a) a)
+(function (a b) (add a b))
+(function (x y z) (mul x (add y z)))
+
+(function () ())
+(function (x) (quote x))
+(function (x) (if (lt x 10) 'small 'large))
+
+(function)
+(function (x))
+(function (x) x extra)
+(function x x)
+(function '(x) x)
+(function ((x)) x)
+
+
+(set foo (function (a b) (add a b)))
+foo
+
+(set square (function (x) (mul x x)))
+square
+
+(set constant (function () 42))
+constant
+
+(set identity (function (x) x))
+identity
+
+(set first (function (a b) a))
+first
+
+(set choose (function (condition a b) (if condition a b)))
+choose
+
+(set recursive (function (n) (if (lt n 2) 1 (mul n (recursive (sub n 1))))))
+recursive
+
+(set savedFunction (function (x) (add x 1)))
+savedFunction
+
+(set anotherFunction savedFunction)
+anotherFunction
+
+(list? foo)
+(atom? foo)
+(nil? foo)
+
+(car foo)
+(car (cdr foo))
+(car (cdr (cdr foo)))
+
+(if 'T
+    (function (a) (add a 1))
+    (function (b) (sub b 1)))
+
+(if ()
+    (function (a) (add a 1))
+    (function (b) (sub b 1)))
+
+(cons (function (x) x) '())
+(cons foo (cons square '()))
+
+(set functionList (cons foo (cons square '())))
+functionList
+(car functionList)
+(car (cdr functionList))
+
+
+(foo 5 3)
+(foo 10 20)
+(square 5)
+(square 10)
+(constant)
+(identity 'hello)
+(identity 45)
+(first 'a 'b)
+(first 10 20)
+
+(choose 'T 'yes 'no)
+(choose () 'yes 'no)
+(choose (lt 3 5) 'less 'greater)
+
+(recursive 0)
+(recursive 1)
+(recursive 5)
+(recursive 6)
+
+(savedFunction 10)
+(anotherFunction 10)
+(anotherFunction 25)
+
+(set x 100)
+(set y 200)
+(set localTest (function (x) (add x 5)))
+(localTest 10)
+x
+y
+
+(set double (function (x) (mul x 2)))
+(set quadruple (function (x) (double (double x))))
+(double 5)
+(quadruple 5)
+(quadruple 10)
+
+(set addThree (function (a b c) (add (add a b) c)))
+(addThree 1 2 3)
+(addThree 10 20 30)
+
+(def sum (a b) 
+       (add a b))
+sum
+(sum 5 3)
+(sum 20 10)
+(sum -5 3)
+
+(def cube (x) 
+       (mul x (mul x x)))
+cube
+(cube 2)
+(cube 3)
+(cube -2)
+
+(def increment (x) 
+       (add x 1))
+increment
+(increment 5)
+(increment 0)
+(increment -5)
+
+(def answer () 42)
+answer
+(answer)
+
+(def emptyFunction () ())
+emptyFunction
+(emptyFunction)
+
+(def identityDef (x) x)
+identityDef
+(identityDef 'hello)
+(identityDef 100)
+(identityDef '(a b c))
+
+(def sumThree (a b c) 
+       (add (add a b) c))
+sumThree
+(sumThree 1 2 3)
+(sumThree 10 20 30)
+
+(def maxTwo (a b) 
+       (if (lt a b) b a))
+maxTwo
+(maxTwo 5 10)
+(maxTwo 10 5)
+(maxTwo 7 7)
+
+(def absolute (x) 
+       (if (lt x 0) 
+       (sub 0 x) 
+              x))
+absolute
+(absolute -10)
+(absolute 10)
+(absolute 0)
+
+(def factorial (n) 
+       (if (lt n 2) 
+       1 
+       (mul n 
+              (factorial (sub n 1)))))
+factorial
+(factorial 0)
+(factorial 1)
+(factorial 5)
+(factorial 6)
+
+(def doubleDef (x) 
+       (mul x 2))
+(def quadrupleDef (x) 
+       (doubleDef (doubleDef x)))
+(doubleDef 5)
+(quadrupleDef 5)
+(quadrupleDef 10)
+
+(def square (x)
+       (mul x x))
+(def addAndSquare (a b) 
+       (square (add a b)))
+(addAndSquare 2 3)
+(addAndSquare 4 6)
+
+(def compare (a b) 
+       (if (eq? a b) 'equal 'not-equal))
+(compare 5 5)
+(compare 5 6)
+(compare 'hello 'hello)
+(compare 'hello 'world)
+
+(def isZero (x)  
+       (eq? x 0))
+(isZero 0)
+(isZero 5)
+
+(def isPositive (x) 
+       (lt 0 x))
+(isPositive 5)
+(isPositive -5)
+(isPositive 0)
+
+(def chooseDef (condition a b) (if condition a b))
+(chooseDef 'T 'yes 'no)
+(chooseDef () 'yes 'no)
+(chooseDef (lt 3 5) 'less 'greater)
+
+(def firstDef (a b) a)
+(firstDef 'hello 'world)
+(firstDef 10 20)
+
+(set globalValue 100)
+(def useLocal (globalValue) 
+       (add globalValue 5))
+(useLocal 10)
+globalValue
+(useLocal 20)
+globalValue
+
+(def outer (x) 
+       (add (doubleDef x) 1))
+(outer 5)
+(outer 10)
+
+(def nestedCalls (x) 
+       (increment (doubleDef (square x))))
+(nestedCalls 2)
+(nestedCalls 3)
+
+(def original (x) 
+       (add x 10))
+(original 5)
+
+(set copiedFunction original)
+(copiedFunction 5)
+(copiedFunction 20)
+
+(def original (x) 
+       (mul x 10))
+(original 5)
+(copiedFunction 5)
+
+(def redefined (x) 
+       (add x 1))
+(redefined 5)
+(def redefined (x) (mul x 2))
+(redefined 5)
+
+(def listMaker (a b) 
+       (cons a (cons b '())))
+(listMaker 'a 'b)
+(listMaker 1 2)
+
+(def getFirst (x) 
+       (car x))
+(getFirst '(a b c))
+(getFirst '(1 2 3))
+
+(def getRest (x)  
+       (cdr x))
+(getRest '(a b c))
+(getRest '(1 2 3))
+
+(def isEmpty (x) 
+       (nil? x))
+(isEmpty '())
+(isEmpty '(a b))
+(isEmpty 'hello)
+
+(def countDown (n) 
+       (if (lt n 1) 
+       0 
+       (add 1 
+            (countDown (sub n 1)))))
+(countDown 0)
+(countDown 3)
+(countDown 5)
+
+(def fibonacci (n) 
+       (if (lt n 2) 
+       n 
+       (add 
+           (fibonacci (sub n 1)) 
+           (fibonacci (sub n 2)))))
+(fibonacci 0)
+(fibonacci 1)
+(fibonacci 5)
+(fibonacci 6)
+
+
+(def)
+(def foo)
+(def foo (x))
+(def foo (x) x extra)
+(def '(foo) (x) x)
+(def foo x x)
+(def foo '(x) x)
+(def foo ((x)) x)
+
+(add (sum 5 3) (cube 2))
+(mul (factorial 4) (increment 2))
+(if (isZero 0) (answer) (sum 1 2))
+(maxTwo (square 3) (cube 2))
+
+(set addTwo (function (a b) (add a b)))
+(addTwo)
+(addTwo 5)
+(addTwo 5 10 15)
+(addTwo 'hello 5)
+(addTwo '(1 2) 3)
+
+(def square (x) (mul x x))
+(square)
+(square 2 3)
+(square 'hello)
+(square '(1 2))
+
+(def zero () 0)
+(zero 5)
+
+(def divide (a b) (div a b))
+(divide 10 0)
+(divide 'hello 2)
+
+(def brokenCar (x) (car x))
+(brokenCar 'a)
+(brokenCar '())
+
+(def brokenFunction (x) (unknown x))
+(brokenFunction 5)
+
+(def nestedError (x) (add (div x 0) 5))
+(nestedError 10)
+
+
+
+
+(def cardValue (card)
+        (if (lt 10 card)
+                10
+                card))
+(def handTotal (hand)
+    (if (nil? hand)
+        0
+        (add (cardValue (car hand))
+             (handTotal (cdr hand)))))
+(def countAces (hand)
+    (if (nil? hand)
+        0
+        (if (eq? (car hand) 1)
+            (add 1 (countAces (cdr hand)))
+            (countAces (cdr hand)))))
+(def useAces (total aces)
+    (if (eq? aces 0)
+        total
+        (if (lt (add total 10) 22)
+            (useAces (add total 10)
+                     (sub aces 1))
+            total)))
+(def blackjack (hand)
+    (useAces
+        (handTotal hand)
+        (countAces hand)))
+
+(blackjack '(1 10))
+(blackjack '(1 5 3))
+(blackjack '(1 9 5))
+(blackjack '(11 12))
+(blackjack '(1 1 8))
+(blackjack '(1 1 10 11))
+(blackjack '(10 10 5))
+(blackjack '(1 1 1 1 5))
+
+
+
+(def firstRoll (rolls)
+    (car rolls))
+
+(def secondRoll (rolls)
+    (car (cdr rolls)))
+
+(def thirdRoll (rolls)
+    (car (cdr (cdr rolls))))
+
+(def scoreFrames (rolls framesLeft)
+    (if (eq? framesLeft 0)
+        0
+        (if (eq? (firstRoll rolls) 10)
+            (add
+                (add 10
+                     (add (secondRoll rolls)
+                          (thirdRoll rolls)))
+                (scoreFrames
+                    (cdr rolls)
+                    (sub framesLeft 1)))
+            (if (eq? (add (firstRoll rolls)
+                          (secondRoll rolls)) 10)
+                (add
+                    (add 10 (thirdRoll rolls))
+                    (scoreFrames
+                        (cdr (cdr rolls))
+                        (sub framesLeft 1)))
+                (add
+                    (add (firstRoll rolls)
+                         (secondRoll rolls))
+                    (scoreFrames
+                        (cdr (cdr rolls))
+                        (sub framesLeft 1)))))))
+
+(def bowling (rolls)
+    (scoreFrames rolls 10))
+
+
+(bowling '(10 10 10 10 10 10 10 10 10 10 10 10))
+(bowling '(5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5))
+(bowling '(9 0 9 0 9 0 9 0 9 0 9 0 9 0 9 0 9 0 9 0))
+(bowling '(0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0))
+(bowling '(10 3 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0))
+
+
+(def totalCost (prices)
+    (if (nil? prices)
+        0
+        (add (car prices)
+             (totalCost (cdr prices)))))
+
+(def countItems (prices)
+    (if (nil? prices)
+        0
+        (add 1
+             (countItems (cdr prices)))))
+
+(def averagePrice (prices)
+    (if (nil? prices)
+        0
+        (div (totalCost prices)
+             (countItems prices))))
+
+(def countExpensive (prices)
+    (if (nil? prices)
+        0
+        (if (lt 20 (car prices))
+            (add 1
+                 (countExpensive (cdr prices)))
+            (countExpensive (cdr prices)))))
+
+(totalCost '(5 10 15))
+(countItems '(1 2 3 4))
+(averagePrice '(10 20 30))
+(countExpensive '(5 10 15))
+(totalCost '())
+(countItems '())
+(set cart '(10 25 15 40 30))
+(totalCost cart)
+(countItems cart)
+(averagePrice cart)
+(countExpensive cart)
